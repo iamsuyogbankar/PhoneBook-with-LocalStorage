@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">Add Contact
+        <button style="float: right" routerLink="/" class="btn btn-outline-dark btn-md">Back to Contact List</button>
+      </div>
+      <div class="card-body">
+      <form [formGroup]="contactForm" (ngSubmit)="addToContact(contactForm.value)" method="POST">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control"
+            formControlName="fullname" id="fullname" name="fullname" required>  
+          <div *ngIf="contactForm.controls['fullname'].touched">
+            <span *ngIf="contactForm.controls['fullname'].hasError('required')">
+              Your Full Name is Required
+            </span>
+          </div>
+        </div>      
+          
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" class="form-control" 
+          formControlName="mobilenumber" id="mobilenumber" name="mobilenumber"
+          required>
+            <div *ngIf="contactForm.controls['mobilenumber'].touched && !contactForm.controls['mobilenumber'].valid">
+              <span *ngIf="contactForm.controls['mobilenumber'].hasError('required')">
+                Your Mobile No is required
+              </span>
+              <span *ngIf="contactForm.controls['mobilenumber'].hasError('pattern')">
+                Your Mobile No Pattern is invalid
+              </span>
+              <span *ngIf="contactForm.controls['mobilenumber'].hasError('minLength')">
+                Your Mobile should be minimum 10 digits
+              </span>
+              <span *ngIf="contactForm.controls['mobilenumber'].hasError('maxLength')">
+                Your Mobile should be maximum 10 digits
+              </span>
+            </div>
+        </div> 
+          <div >     
+          <button   style="margin-left: 45%;" type="submit" class="btn btn-success btn-md"  [disabled]="!contactForm.valid">ADD</button>
+        </div> 
+        </form>
+      </div>
+    </div>     
+  </div>
+</div>
+  
