@@ -1,35 +1,35 @@
 <div class="container">
   <div class="col-md-12">
     <div class="card">
-      <div class="card-header"><span class="text-center">List Of Contacts</span> 
-        <form class="form-inline my-2 my-lg-0" style="float: right;" >
-          <button class="btn btn-outline-success" type="submit">Search</button>
-          <input (keyup)="searchContact($event)" class="form-control mr-sm-2" type="search" 
-            placeholder="Search" autocomplete="on">
-        </form>
+      <div class="card-header text-center">List Of Contacts 
+          <div class="form-inline my-2 my-lg-0" style="float: right;" >
+          <input [(ngModel)]="searchText" class="form-control form-control-sm mr-sm-2 mb-0"
+           type="text"  aria-label="Search" 
+            placeholder="Search Contact" autocomplete="on">
+          </div>
       </div>
       <div class="card-body">
         <table class="table table-bordered">
           <thead>
-            <tr>
+            <tr align="center">
               <th scope="col">Sr.No</th>
               <th scope="col">Name</th>
               <th scope="col">Mobile Number</th>
-              <th scope="col">Action</th>
+              <th  scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody align="center">
             <tr *ngIf="viewcontact == ''">
               <td colspan="2">You don't have any contact in your phone book</td>
               <td colspan="2"><button routerLink="/addcontacts" class="btn btn-outline-success btn-md" >Add Contact</button></td>
             </tr>
-            <tr *ngFor="let contact of viewcontact; let i=index">
+            <tr *ngFor="let contact of viewcontact | filter:searchText; let i=index">
               <th scope="row">{{ i+1 }}</th>
               <td>{{ contact.fullname | uppercase}}</td>
               <td>{{ contact.mobilenumber }}</td>
               <td><button routerLink="/addcontacts" class="btn btn-outline-success btn-md mr-4">Add Contact</button>
                 <button routerLink="/update-contact/{{contact.id}}" class="btn btn-outline-info btn-md mr-4">Update</button>
-                <button class="btn btn-outline-dark btn-md" (click)="onDelete(contact.id)">Delete</button>
+                <button class="btn btn-outline-danger btn-md" (click)="onDelete(contact.id)">Delete</button>
               </td>
             </tr>
           </tbody>

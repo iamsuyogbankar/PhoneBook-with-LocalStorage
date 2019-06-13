@@ -7,6 +7,9 @@ import { AddcontactsComponent } from './addcontacts/addcontacts.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShareService } from './share.service';
 import { SearchnamePipe } from './searchname.pipe';
+// search module
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { SearchnamePipe } from './searchname.pipe';
     NgxTypeaheadModule, //for serach result
     AppRoutingModule,
     FormsModule,
+    Ng2SearchPipeModule,
     ReactiveFormsModule //for reactive form validation
   ],
   providers: [ShareService],

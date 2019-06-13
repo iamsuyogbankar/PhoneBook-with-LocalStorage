@@ -14,23 +14,23 @@ public confirm; //used for delete contact
 public values; //onkeyup values for search
 public  contactList; //hold all names
 
+public searchText;
+
 
 constructor(private shareService: ShareService, private router: Router) {  
   this.contactList = this.shareService.serchbyName();  // name of localStorage data
-  this.viewcontact = this.shareService.getContacts(); //all data of localStorage
-  }
+}
 
 ngOnInit() { 
-}
-
-
-searchContact(event: any){
-// this.searchresults = this.viewcontact.
-// filter(m => m.fullname === contactvalue);
-this.values = event.target.value;
-console.log('searchresults', this.values);
+  this.viewcontact = this.shareService.getContacts(); //all data of localStorage
   
 }
+
+
+// searchContact(event: any){
+// this.values = event.target.value;
+// console.log('values', this.values)
+// }
 
  onDelete(id){
   this.confirm = confirm("Do you really want to delete this record?");

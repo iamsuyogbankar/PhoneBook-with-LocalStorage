@@ -1,0 +1,10 @@
+.card{
+    border: 1px solid black
+}
+.card-header{
+    font-weight: bolder;
+    background-color: #E89F65;
+    color: whitesmoke;
+    font-size: x-large;   
+    font-style: italic 
+}

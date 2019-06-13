@@ -1,13 +1,37 @@
-<div class="container">
-  <div class="card">
-    <div class="col-md-12">      
-      <div class="card-header"><h1>Welcome to PhoneBook App</h1></div>
-      <div class="card-body">
-          <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
+<!-- <div class="card-header text-center" 
+  style="background-color: #B94629;color: white;">
+  <h1>Welcome to Contact Directory</h1>
 </div>
+<div id="body" class="mt-5">  
+    <router-outlet></router-outlet>
+</div>
+<div>
+<footer id="footer" class="footer font-small" 
+style="background-color: #B94629;color: white;">
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <span>Suyog Bankar</span>
+  </div>
+</footer>
+</div> -->
 
+<div class=”wrapper”>
+
+  <header class="card-header text-center" 
+    style="background-color: #B94629;color: white;">
+    <h1>Welcome to Contact Directory</h1>
+  </header>
+
+  <section class="mt-5 mb-5" style="">
+    <router-outlet></router-outlet>
+  </section>
+
+  <footer class="fixed-bottom" 
+    style="background-color: #B94629;color: white;">
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <span>Suyog Bankar</span>
+    </div>
+  </footer>
+
+</div>
 
 

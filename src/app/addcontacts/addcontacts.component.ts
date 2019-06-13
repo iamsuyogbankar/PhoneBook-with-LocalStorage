@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ShareService } from '../share.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+declare var $: any
+// import $ from "jquery";
 
 @Component({
   selector: 'app-addcontacts',
@@ -21,7 +23,13 @@ export class AddcontactsComponent implements OnInit {
   }
 
   ngOnInit(){  
-    console.log('allContacts',this.allcontacts) 
+    $(function(){
+      $("#addmoref").click(function(e){
+        e.preventDefault();
+        $("#fieldList").append("<li>&nbsp;</li>");
+        $("#fieldList").append("<li><input type='tel' name='mobilenumber' placeholder='Mobile No' /></li>");
+      });
+    });
   }
 
   addToContact(){

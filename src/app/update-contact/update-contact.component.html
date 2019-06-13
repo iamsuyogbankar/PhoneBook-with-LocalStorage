@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="container-fluid">
+    <div class="col-md-7 mx-auto">
      <div class="card">
        <div class="card-header">Update Contact
         <button style="float: right" routerLink="/" class="btn btn-outline-dark btn-md">Back to Contact List</button>
@@ -11,22 +11,22 @@
               <input type="text" value="{{filterData[0].fullname}}"  
               class="form-control" name="fullname" id="fullname" 
               formControlName="fullname" required>
+              
             </div>  
 
             <div class="form-group">
               <label>Mobile Number</label>
               <input type="number" value="{{filterData[0].mobilenumber}}" 
                 class="form-control" name="mobilenumber" id="mobilenumber" 
-              formControlName="mobilenumber" required>
+              formControlName="mobilenumber" minlength="10" maxlength="10" required>              
             </div>
 
-            <div class="form-group">
-              <button type="submit" class="btn btn-outline-dark btn-md" [disabled]="!updateForm.dirty">UPDATE</button>
+            <div align="center" class="form-group">
+              <button type="submit" class="btn btn-outline-success btn-md" [disabled]="!updateForm.dirty">UPDATE</button>
             </div>
           </form>
        </div>
-     </div>
-     
+     </div>     
     </div>
   </div>
   

@@ -5,3 +5,17 @@ input.ng-touched.ng-invalid{
 .help-block{
     color: red;
 }
+.card{
+    border: 1px solid black
+}
+.card-header{
+    font-weight: bolder;
+    text-align: center;
+    background-color: #E89F65;
+    color: whitesmoke;
+    font-size: x-large;   
+    font-style: italic 
+}
+.form-group span{
+    color: red;
+}
